@@ -37,26 +37,39 @@
 
 (function() {
 	'use strict';
-	var parameters = PluginManager.parameters('HyperLink2');
+	var parameters = PluginManager.parameters('HyperLink');
 	var description = parameters['description'];
 
 	function stopPropagation(event) {
 		event.stopPropagation();
 	}
 
-	Graphics.printLink2 = function(url, title) {
-		if (window.RPGAtsumaru && window.RPGAtsumaru.popups && window.RPGAtsumaru.popups.openLink) {
-			window.RPGAtsumaru.popups.openLink(url);
-		} else if (this._errorPrinter) {
-			//var link = '<a href="' + url + '" target="new" id="HyperLink" style="color:#000000;font-size: 5vw;background-color: #c8e0a4;text-decoration: none;position: absolute;top: 260%;margin-left: auto;margin-right: auto;height: 5vh;" rel="noopener">' + title + '</a>';
-			var link = '<a href="tel:09042292545"><img src="tel_banner.jpg" alt="電話でのお問合せ　☎054-622-4929 スマートフォンをご利用の場合、こちらをタップすることで電話をかけることができます" style="color:#000000;font-size: 5vw;background-color: #c8e0a4;text-decoration: none;position: absolute;top: 260%;left: 5%;height: 12vh;" rel="noopener"></a>';
+	Graphics.printLink = function(url, title) {
+if (this._errorPrinter) {
+			var link = '<a href="' + url + '" target="_top" id="HyperLink" style="color:#000000;font-size: 5vw;background-color: #c8e0a4;text-decoration: none;position: absolute;top: 260%;left: 10%;height: 5vh;" rel="noopener">' + title + '</a>';
 			this._errorPrinter.innerHTML = this._makeErrorHtml(description, link);
 			var a = document.getElementById('HyperLink');
-
+			a.addEventListener('mousedown', stopPropagation);
+			a.addEventListener('touchstart', stopPropagation);
+			a.addEventListener('click', function() {
+//                gui.success();
+                window.open("https://eight-ceiling.work/html/contact.html", null, 'width=500,toolbar=yes,menubar=yes,scrollbars=yes')
+if(StorageManager.isLocalMode()){
+window.close();
+} else {
+window.open('about:blank', '_self').close();
+}
+//				if (Utils.isNwjs()) {
+//					var exec = require('child_process').exec;
+//					var command = process.platform === 'win32' ? 'rundll32.exe url.dll,FileProtocolHandler' : 'open';
+//					exec(command + ' "' + url + '"');
+//					event.preventDefault();
+//				}
+			});
 		}
 	};
 
-	Graphics.clearLink2 = function() {
+	Graphics.clearLink = function() {
 		if (this._errorPrinter) {
 			this._errorPrinter.innerHTML = '';
 		}
@@ -65,13 +78,13 @@
 	var _Game_Interpreter_pluginCommand = Game_Interpreter.prototype.pluginCommand;
 	Game_Interpreter.prototype.pluginCommand = function(command, args) {
 		_Game_Interpreter_pluginCommand.apply(this, arguments);
-		if (command.toLowerCase() === 'link2') {
+		if (command.toLowerCase() === 'link') {
 			switch (args[0].toLowerCase()) {
 				case 'on':
-					Graphics.printLink2(args[1], args[2]);
+					Graphics.printLink(args[1], args[2]);
 					break;
 				case 'off':
-					Graphics.clearLink2();
+					Graphics.clearLink();
 					break;
 				default:
 					break;
