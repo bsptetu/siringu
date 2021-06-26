@@ -3,7 +3,7 @@
 var $plugins =
 [
 {"name":"MPP_SimpleTouch3","status":true,"description":"【ver.3.18】マウスやタッチ操作を変更します。","parameters":{"Cancel Enabled?":"false","Double Tap Interval":"30","Cursor SE Always?":"false","Scroll Warp?":"false","Scroll Warp SE":"{\"Name\":\"\",\"Volume\":\"90\",\"Pitch\":\"100\",\"Pan\":\"0\"}","Smooth Scroll?":"true","=== Default ===":"","Long Press Time":"12","Select Type Default":"1","Ok Type Default":"1","Outside Tap Default":"0","=== Option ===":"","Long Press Name":"","Select Type Name":"","Select Type Status":"[\"タッチ\",\"追従\"]","Ok Type Name":"決定操作","Ok Type Status _v3":"[\"デフォルト\",\"シングル\",\"ダブル\"]","Outside Tap Name":"","Outside Tap Status _v3":"[\"無効\",\"キャンセル\"]","=== Command ===":"","Plugin Commands":"{\"CancelOff\":\"CancelOff\"}"}},
-{"name":"Community_Basic","status":true,"description":"基本的なパラメーターを設定するプラグインです。","parameters":{"cacheLimit":"15","screenWidth":"750","screenHeight":"600","changeWindowWidthTo":"750","changeWindowHeightTo":"600","renderingMode":"auto","alwaysDash":"off"}},
+{"name":"Community_Basic","status":true,"description":"基本的なパラメーターを設定するプラグインです。","parameters":{"cacheLimit":"15","screenWidth":"750","screenHeight":"750","changeWindowWidthTo":"750","changeWindowHeightTo":"750","renderingMode":"auto","alwaysDash":"off"}},
 {"name":"EasingPicture","status":true,"description":"ピクチャーの移動パターンを増やします。","parameters":{}},
 {"name":"PictureAnimation","status":true,"description":"ピクチャのアニメーションプラグイン","parameters":{"最初のセルに戻る":"false"}},
 {"name":"PictureCallCommon","status":true,"description":"ピクチャのボタン化プラグイン","parameters":{"透明色を考慮":"true","ピクチャ番号の変数番号":"0","ポインタX座標の変数番号":"337","ポインタY座標の変数番号":"338","タッチ操作抑制":"false","戦闘中常にコモン実行":"true","無効スイッチ":"659"}},
