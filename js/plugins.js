@@ -15,7 +15,8 @@ var $plugins =
 {"name":"MpiComposePicture","status":true,"description":"2つのピクチャを合成します。","parameters":{"Plugin Command":"compose_picture"}},
 {"name":"ItemNameEscape","status":true,"description":"項目名の制御文字適用プラグイン","parameters":{}},
 {"name":"AutoLoad","status":true,"description":"タイトル画面仕様変更プラグイン","parameters":{"効果音演奏":"false","タイトルスキップポリシー":"2","タイトルマップID":"2"}},
-{"name":"HyperLink2","status":true,"description":"ゲーム中に外部ページへのリンクを貼ります。","parameters":{"description":"server"}},
 {"name":"PictureVariableSetting","status":true,"description":"ピクチャ関連のイベント機能拡張プラグイン","parameters":{"初期値":"OFF","ピクチャ表示最大数":""}},
-{"name":"Loading","status":true,"description":"v1.00 This plugin customizes a loading ui","parameters":{}}
+{"name":"Loading","status":true,"description":"v1.00 This plugin customizes a loading ui","parameters":{}},
+{"name":"HyperLink","status":false,"description":"ゲーム中に外部ページへのリンクを貼ります。","parameters":{"description":"Webサイトへのリンク"}},
+{"name":"HyperLink2","status":false,"description":"ゲーム中に外部ページへのリンクを貼ります。","parameters":{"description":"server"}}
 ];
